@@ -1,0 +1,195 @@
+.tabs{
+    display: flex;
+    width: 100%;
+}
+.tab{
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color:black;
+    border-bottom: none;
+    padding: 10px;
+    margin: 0 0 -1px 0;
+    display: inline-block;
+    width: 50%;
+    text-align: center;
+    cursor: pointer;
+    
+}
+#injurysystem{
+    width: 100%;
+    height: 500%;
+    display: flex;
+    overflow: hidden;
+    background-color: white;
+}
+.human-body {
+
+    width: 100%;
+    position: relative;
+    display: block;
+  }
+  
+  .human-body svg:hover {
+    cursor: pointer;
+  }
+  
+  .human-body svg {
+    position: absolute;
+    top:-50px;
+    left: 40%;
+    fill: #000;
+  }
+#pacjnet{
+    height: 50px;
+    width: 100px;
+    top:20px;
+    margin-left:50px;
+}
+
+#contener{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: white;
+}
+#text{
+    width:500px;
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 18px;
+    color:black;
+}
+#list{
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 18px;
+    color:black;
+}
+#titles{
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 18px;
+    float:left;
+    display:flex;
+}
+#title{
+    margin-left:40px;
+}
+#lista{
+    overflow-y: scroll;
+    height: 200px;
+    width: 500px;
+    color:black;
+
+}
+#przerwa{
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 18px;
+    float:left;
+    display:flex;
+    background: #3f51b5 !important;
+
+}
+#hubtitle{
+    background-color: #3f51b5;
+    height: 50px;
+    width: 100%;
+    color:white;
+}
+#pasek{
+    background-color: #3f51b5;
+    height: 300px;
+    width: 100%;
+    color:white;
+    /*center*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#id{
+    margin-right:10px;
+}
+#sub{
+    margin-right: 10px;
+}
+#title{
+    width: 100%;
+}
+#pacjent{
+    /*  under eachothers */
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#faktury{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#id{
+    width: 70px;
+}
+
+#kwota{
+    width: 100px;
+}
+#info{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: left;
+}
+
+.btn{
+    margin-left: 10px;
+  }
+
+#fakid{
+    width: 70px;
+}
+.disabledp{
+    pointer-events:none;
+}
+
+#dispatch-list{
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 18px;
+    color:black;
+}
+#dispatch-titles{
+    margin-top:20px;
+    margin-left:10px;
+    font-size: 18px;
+    float:left;
+    display:flex;
+}
+#dispatch-title{
+    margin-left:40px;
+}
+#dispatch-lista{
+    overflow-y: scroll;
+    height: 200px;
+    width: 500px;
+    color:black;
+
+}
