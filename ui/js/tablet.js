@@ -257,18 +257,6 @@ onsubmit = (event) => {
   var id = document.getElementById("id").value;
   //console.log(id);
   if(isNumber(id)){
-    fetch(`https://esx_emsTablet/GetInjuries`, {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json; charset=UTF-8',
-      },
-      body: JSON.stringify({
-        playerid: id
-    })
-  }).then(resp => resp.json()).then(resp => handleResp(resp)
-    );
-  }
-  if(isNumber(id)){
   fetch(`https://esx_emsTablet/GetInjuries`, {
     method: 'POST',
     headers: {
