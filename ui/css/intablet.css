@@ -1,11 +1,14 @@
+.overlay{
+    overflow: hidden;
+}
 .tabs{
     display: flex;
     width: 100%;
 }
 .tab{
-    background-color: #fff;
+    background-color: #1a1c1b;
     border: 1px solid #ccc;
-    color:black;
+    color:white;
     border-bottom: none;
     padding: 10px;
     margin: 0 0 -1px 0;
@@ -14,19 +17,23 @@
     text-align: center;
     cursor: pointer;
     
+    
 }
 #injurysystem{
     width: 100%;
-    height: 500%;
+    height: 100%;
+    /* move up */
+
     display: flex;
     overflow: hidden;
-    background-color: white;
 }
 .human-body {
-
-    width: 100%;
+    
+    width: 50%;
     position: relative;
     display: block;
+    background-color: #212225;
+    color:white;
   }
   
   .human-body svg:hover {
@@ -35,38 +42,32 @@
   
   .human-body svg {
     position: absolute;
-    top:-50px;
-    left: 40%;
-    fill: #000;
+    top: 20px;
+    left: 30%;
+    fill: white;
   }
-#pacjnet{
-    height: 50px;
-    width: 100px;
-    top:20px;
-    margin-left:50px;
-}
 
 #contener{
     width: 100%;
     height: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: white;
+    background-color: #212225;
+    color:white;
 }
 #text{
     width:500px;
     margin-top:20px;
     margin-left:10px;
     font-size: 18px;
-    color:black;
+    color:white;
 }
 #list{
     margin-top:20px;
     margin-left:10px;
     font-size: 18px;
-    color:black;
+    color:white;
 }
 #titles{
     margin-top:20px;
@@ -79,40 +80,15 @@
     margin-left:40px;
 }
 #lista{
-    overflow-y: scroll;
-    height: 200px;
-    width: 500px;
-    color:black;
-
-}
-#przerwa{
-    margin-top:20px;
-    margin-left:10px;
-    font-size: 18px;
-    float:left;
-    display:flex;
-    background: #3f51b5 !important;
-
-}
-#hubtitle{
-    background-color: #3f51b5;
-    height: 50px;
-    width: 100%;
+    height: 130px;
+    width: 600px;
     color:white;
-}
-#pasek{
-    background-color: #3f51b5;
-    height: 300px;
-    width: 100%;
-    color:white;
-    /*center*/
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    max-height:130px; 
+    overflow-y:scroll;
 }
 #form{
     width: 100%;
-    height: 100%;
+    height: 50px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -129,15 +105,6 @@
 #pacjent{
     /*  under eachothers */
     width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
-#faktury{
-    width: 50%;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -192,4 +159,75 @@
     width: 500px;
     color:black;
 
+}
+#bg{
+    width: 954px;
+    height: 415px;
+    overflow-y: hidden;
+}
+#card-body{
+    /*  center */
+    display: flex;
+    justify-content: center;
+}
+#cardw{
+    float:left; margin-left:10px; width:770px; margin-top:20px; background-color: whitesmoke; color:black;
+}
+#tablet_content{
+    float:left; 
+    background-color: #212225;
+    width:100%; 
+    height:509px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+   
+}
+#tablet_content::-webkit-scrollbar-track
+{
+	display:none;
+
+}
+#tablet_content::-webkit-scrollbar
+{
+	width: 12px;
+  display:none;
+
+}
+#card-icon{
+    background-color: #5963f6;
+    font-size:25px;
+    padding:9px;
+    float:left;
+    color:white;
+    border-radius:7px;
+}
+#card-name{
+    float:left;
+    color:#607d8b; 
+    font-family: 'Roboto', sans-serif;
+    font-size:13px;
+    margin-left:10px;
+}
+#number{
+    font-size:20px; 
+    font-family: 'Roboto', sans-serif;
+    float:left;
+    width:100px;
+    margin-left:10px;
+}
+.wezwania{
+max-height:100px; 
+    overflow-y:scroll;
+    overflow-x:hidden;            
+}
+#informacje{
+    float:left;
+    width:80%;
+    color:white; 
+    font-family: 'Roboto', sans-serif;
+    font-size:15px;
+    margin-left:10px;
+}
+#wezwania{
+    /*center*/
 }

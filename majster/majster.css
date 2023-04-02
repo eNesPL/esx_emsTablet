@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;500&display=swap');
+
+html, body{
+    background-color: transparent;  
+}
+#tablet_policyjny{
+    display:none;
+    width:960px;
+    height:679px;
+    margin:0 auto;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    background-image: url('https://cdn.pixabay.com/photo/2016/08/14/14/54/tablet-1593045_960_720.png');
+}
+#tablet_content{
+    float:left; 
+    background-color: #212225;
+    width:795px; 
+    height:509px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    margin-top:84px;
+    margin-left:87px;
+   
+}
+#tablet_content::-webkit-scrollbar-track
+{
+	display:none;
+
+}
+#tablet_content::-webkit-scrollbar
+{
+	width: 12px;
+  display:none;
+
+}
+#card-icon{
+    background-color: #5963f6;
+    font-size:25px;
+    padding:9px;
+    float:left;
+    color:white;
+    border-radius:7px;
+}
+#card-name{
+    float:left;
+    color:#607d8b; 
+    font-family: 'Roboto', sans-serif;
+    font-size:13px;
+    margin-left:10px;
+}
+#number{
+    font-size:20px; 
+    font-family: 'Roboto', sans-serif;
+    float:left;
+    width:100px;
+    margin-left:10px;
+}
+.wezwania{
+max-height:100px; 
+    overflow-y:scroll;
+    overflow-x:hidden;            
+}
+#panel_postaci{
+    float:left; 
+    background-color: #212225;
+    width:795px; 
+    height:509px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    margin-top:84px;
+    margin-left:87px;
+    display:none; 
+}
+#imie{
+    float:left;
+    color:white; 
+    font-family: 'Roboto', sans-serif;
+    font-size:20px;
+    margin-top:10px; 
+    margin-left: 10px;
+}
+#informacje{
+    float:left;
+    width:80%;
+    color:white; 
+    font-family: 'Roboto', sans-serif;
+    font-size:15px;
+    margin-left:10px;
+}
+#panel_postaci::-webkit-scrollbar-track
+{
+	display:none;
+
+}
+#panel_postaci::-webkit-scrollbar
+{
+	width: 12px;
+  display:none;
+
+}
+#fine-list{
+    float:left; 
+    width:100%;
+    display:none;
+}
+.fine{
+    float:left; 
+    width:100%;
+    background-color: #212225;
+    color:white;
+    padding:5px;
+    margin-bottom:10px;
+    font-size:13px;
+    font-family: 'Roboto', sans-serif;
+}
+.fine:hover{
+    cursor:pointer;
+}

@@ -146,15 +146,6 @@ function SetPanel() {
   document.getElementById("tabdispatch").classList.remove("active");
 }
 
-function SetPacjent() {
-  document.getElementById("panel").style.display = "none";
-  document.getElementById("pacjent").style.display = "flex";
-  document.getElementById("dispatch").style.display = "none";
-  document.getElementById("tabpacjent").classList.add("active");
-  document.getElementById("tabpanel").classList.remove("active");
-  document.getElementById("tabdispatch").classList.remove("active");
-}
-
 function SetDispatch() {
   document.getElementById("panel").style.display = "none";
   document.getElementById("pacjent").style.display = "none";
@@ -193,11 +184,21 @@ document.onkeyup = data => {
   }
 };
 
+
+function SetPacjent() {
+  document.getElementById("panel").style.display = "none";
+  document.getElementById("pacjent").style.display = "flex";
+  document.getElementById("dispatch").style.display = "none";
+  document.getElementById("tabpacjent").classList.add("active");
+  document.getElementById("tabpanel").classList.remove("active");
+  document.getElementById("tabdispatch").classList.remove("active");
+}
+
 function ChangeColorBack() {
   for (var i = 0; i < Object.keys(dictUI).length; i++) {
     var divs = document.getElementsByClassName(Object.values(dictUI)[i]);
     for (var j = 0; j < divs.length; j++) {
-      divs[j].style.fill = "black";
+      divs[j].style.fill = "white";
     }
   }
 }
@@ -243,8 +244,7 @@ function Heal(){
     body: JSON.stringify({
       playerid: id
   })
-}).then(resp => resp.json()).then(resp => handleHeal(resp)
-  );
+}).then(resp => handleHeal(resp));
 
 }
 
@@ -265,8 +265,17 @@ onsubmit = (event) => {
     body: JSON.stringify({
       playerid: id
   })
-}).then(resp => resp.json()).then(resp => handleResp(resp)
-  );
+}).then(res => res.text())
+.then(body => {
+    try {
+        return JSON.parse(body);
+    } catch {
+        throw Error(body);
+    }
+})
+.then(console.log)
+.catch(console.error);
+
 }
 else{
   $("#lista").append(
@@ -286,19 +295,15 @@ function isJson(str) {
 }
 
 function handleHeal(resp){
-    //console.log("RESP? " + resp);
     if(isJson(resp)){
     resp = JSON.parse(resp);
-    //console.log(resp.length)
     if(resp == true){
     $("#lista").empty();
     ChangeColorBack();
     if (resp.length > 0 && resp != null ) {
-      //console.log("jest")
       populateInjuries(resp);
     }
     else {
-      //console.log("nie ma")
       $("#lista").append(
         "<div class='injury' id='injury'>Brak obrażeń</div>"
       );
@@ -314,11 +319,13 @@ function handleHeal(resp){
 }
 
 function handleResp(resp){
-    //console.log("RESP? " + resp);
+    console.log("RESP? " + resp);
+    if(resp.length != 0){
     resp = JSON.parse(resp);
     //console.log(resp.length)
     $("#lista").empty();
     ChangeColorBack();
+    console.log(resp.length)
     if (resp.length > 0 && resp != null ) {
       //console.log("jest")
       populateInjuries(resp);
@@ -330,4 +337,11 @@ function handleResp(resp){
       );
     }
     SetPacjent();
+  }
+  else{
+    $("#lista").append(
+      "<div class='injury' id='injury'>Brak obrażeń</div>"
+    );
+  }
 }
+
