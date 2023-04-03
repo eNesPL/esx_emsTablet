@@ -17,7 +17,7 @@ end)
 RegisterNUICallback("exit", function(data)
     SetDisplay(false)
 end)
---[[
+
 RegisterNUICallback("Heal", function(data,cb)
     local Status = nil
     ESX.TriggerServerCallback('esx_injuries:esxHealAllInj', function(status)
@@ -64,7 +64,7 @@ RegisterNUICallback("GetInjuries", function(data, cb)
     cb(ret)
     ret={}
 end)
-]]--
+
 RegisterNetEvent("esx_emsTablet:OpenTablet")
 AddEventHandler("esx_emsTablet:OpenTablet", function()
     SetDisplay(true)
@@ -97,7 +97,9 @@ Citizen.CreateThread(function()
                     y = v.y,
                     z = v.z,
                     open = v.open,
-                    id = v.id
+                    id = v.id,
+                    type = "ui",
+                    display = true
                 })
             end
 
