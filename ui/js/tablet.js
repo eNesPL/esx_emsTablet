@@ -167,13 +167,31 @@ window.addEventListener("message", (event) => {
       document.getElementById("showpanel").style.display = "flex";
       SetDispatch();
     }
-  } else {
-    $("#showpanel").hide();
-    document.getElementById("showpanel").style.display = "none";
-  }
+    else {
+      $("#showpanel").hide();
+      document.getElementById("showpanel").style.display = "none";
+    }
+  } 
+  if(item.action == 'dodajWezwanie'){
+    if(item.open == 1) {
+        var style = 'style="background-color:#f44335;"';
+    }
+    else{
+        var style = '';
+    }
+    $("#wezwania").append('<tr id="wezwanie-'+item.id+'" '+style+'><td>'+item.wezwanie_wzywajacy+'</td><td>'+item.wezwanie_wiadomosc+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akcja</button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#" onclick="oznaczGPS(\''+item.x+'\', \''+item.y+'\', \''+item.z+'\');">Oznacz na GPS</a><a class="dropdown-item" href="#" onclick="ZakonczWezwanie(\''+item.id+'\');">Zakończ wezwanie</a></div></div></td></tr>');
+}
 });
 
+function ZakonczWezwanie(id){
+  $("#wezwanie-"+id).css("background-color", "#f44335")
+  return $.post(`https://tablet_policyjny/zakonczWezwanie`, JSON.stringify({id : id }));
+}
 
+function oznaczGPS(x, y, z){
+  return $.post(`https://tablet_policyjny/oznaczGPS`, JSON.stringify({x: x, y: y, z: z}));
+
+}
 document.onkeyup = data => {
   if (data.key === "Escape") {
     $("showpanel").fadeOut(500);

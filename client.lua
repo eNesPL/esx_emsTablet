@@ -68,6 +68,22 @@ end)
 RegisterNetEvent("esx_emsTablet:OpenTablet")
 AddEventHandler("esx_emsTablet:OpenTablet", function()
     SetDisplay(true)
+    ESX.TriggerServerCallback('tablet_policyjny:pobierzNoweWezwania', function(wezwania)
+        for _, v in pairs(wezwania) do
+            SendNUIMessage({
+                action = 'dodajWezwanie',
+                wezwanie_wiadomosc = v.message,
+                wezwanie_wzywajacy = v.wzywajacy,
+                x = v.x,
+                y = v.y,
+                z = v.z,
+                open = v.open,
+                id = v.id,
+                type = "ui",
+                display = true
+            })
+        end
+    end)
 end)
 
 Citizen.CreateThread(function()
@@ -82,29 +98,6 @@ Citizen.CreateThread(function()
         DisableControlAction(0, 18, display) -- Enter
         DisableControlAction(0, 322, display) -- ESC
         DisableControlAction(0, 106, display) -- VehicleMouseControlOverride
-    end
-end)
-
-Citizen.CreateThread(function()
-    while true do
-        ESX.TriggerServerCallback('tablet_policyjny:pobierzNoweWezwania', function(wezwania)
-            for _, v in pairs(wezwania) do
-                SendNUIMessage({
-                    action = 'dodajWezwanie',
-                    wezwanie_wiadomosc = v.message,
-                    wezwanie_wzywajacy = v.wzywajacy,
-                    x = v.x,
-                    y = v.y,
-                    z = v.z,
-                    open = v.open,
-                    id = v.id,
-                    type = "ui",
-                    display = true
-                })
-            end
-
-        end)
-        Citizen.Wait(1000)
     end
 end)
 

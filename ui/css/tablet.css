@@ -6,7 +6,8 @@ body {
   align-items: center;
   height: 100vh;
   font-family: 'Montserrat', sans-serif;
-  background: none !important; 
+  background: none !important;
+  background-color: red;
 }
 .overlay {
   position: absolute;
@@ -30,7 +31,7 @@ body {
   display:flex;
 }
 #showpanel{
-  display:none;
+  display:flex;
 }
 
 #tablet{
@@ -48,7 +49,7 @@ body {
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
-  width: 1120px; 
+  width: 1100px; 
   height: 680px; 
   z-index: 99;
   pointer-events: none;
