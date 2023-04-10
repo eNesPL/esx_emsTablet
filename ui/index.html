@@ -65,12 +65,12 @@
         <div id="pacjent" width="100%" height="100%">
           <div id="injurysystem">
             <div id="contener">
-              <form id="form">
+              <div id="form">
                 ID:
                 <input id="id" name="id" type="text">
-                <button id="sub" type="submit" class="btn btn-warning">Zbadaj</button>
-                <button id="button" class="btn btn-success" onclick="Heal()">Wylecz</button>
-              </form>
+                <button id="sub"class="sub btn btn-warning" onClick="getInjuriesFromId_btn()">Zbadaj</button>
+                <button id="button" class="btn btn-success" onclick="Heal_btn()">Wylecz</button>
+              </div>
               <div id="text">
                 Panel medyczny pokazuje lokalizacje oraz typ otrzymanych obrażeń
                 <br />Uwaga: Panel nie uwzględnia kontekstu oraz gdzie dokładnie

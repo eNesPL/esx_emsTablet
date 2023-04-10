@@ -251,7 +251,9 @@ function populateInjuries(injuries) {
     ChangeColor(Injuries[i].Name);
   }
 }
-
+function Heal_btn(){
+  Heal()
+}
 function Heal(){
   var id = document.getElementById("id").value;
   fetch(`https://esx_emsTablet/Heal`, {
@@ -265,11 +267,11 @@ function Heal(){
 }).then(resp => handleHeal(resp));
 
 }
-
-addEventListener('submit', (event) => { });
-
-onsubmit = (event) => {
-  event.preventDefault();
+function getInjuriesFromId_btn(){
+  getInjuriesFromId()
+}
+function getInjuriesFromId(){
+  //console.log("UUUU")
   $("#lista").empty();
   ChangeColorBack();
   var id = document.getElementById("id").value;
@@ -286,14 +288,13 @@ onsubmit = (event) => {
 }).then(res => res.text())
 .then(body => {
     try {
-        return JSON.parse(body);
+        //console.log(body)
+        handleResp(JSON.parse(body));
     } catch {
         throw Error(body);
     }
 })
-.then(console.log)
 .catch(console.error);
-
 }
 else{
   $("#lista").append(
@@ -337,13 +338,13 @@ function handleHeal(resp){
 }
 
 function handleResp(resp){
-    console.log("RESP? " + resp);
+    //console.log("RESP? " + resp);
     if(resp.length != 0){
     resp = JSON.parse(resp);
     //console.log(resp.length)
     $("#lista").empty();
     ChangeColorBack();
-    console.log(resp.length)
+    //console.log(resp.length)
     if (resp.length > 0 && resp != null ) {
       //console.log("jest")
       populateInjuries(resp);

@@ -1,7 +1,5 @@
 local display = false
-
 function SetDisplay(bool)
-    print("SetDisplay: " .. tostring(bool))
     display = bool
     SetNuiFocus(bool, bool)
     SendNUIMessage({
@@ -30,40 +28,18 @@ RegisterNUICallback("Heal", function(data,cb)
 end)
 
 RegisterNUICallback("error", function(data)
-    print(data.error)
+    print("Error: "+data.error)
     SetDisplay(false)
 end)
-local ret = {}
-RegisterNUICallback("GetInjuries", function(data, cb)
-    print(data.playerid+" "+NetworkIsPlayerActive(data.playerid))
-    if NetworkIsPlayerActive(data.playerid) then
-        ESX.TriggerServerCallback('esx_injuries:esxGetInjuriesForPlayer', function(Injuries)
-            ret = Injuries
-        end, data.playerid)
-        
-        while ret == {} do
-            Citizen.Wait(0)
-        end
-        cb(ret)
-        ret={}
-    else
-        cb("Player is not active")
-    end
-end)
 
-local ret = {}
 RegisterNUICallback("GetInjuries", function(data, cb)
+    local ret = {}  
     ESX.TriggerServerCallback('esx_injuries:esxGetInjuriesForPlayer', function(Injuries)
         ret = Injuries
+        cb(ret)
     end, data.playerid)
-    
-    while ret == {} do
-        Citizen.Wait(0)
-    end
-    
-    cb(ret)
-    ret={}
 end)
+
 
 RegisterNetEvent("esx_emsTablet:OpenTablet")
 AddEventHandler("esx_emsTablet:OpenTablet", function()
