@@ -172,6 +172,7 @@ window.addEventListener("message", (event) => {
       document.getElementById("showpanel").style.display = "none";
     }
   } 
+  var item = event.data
   if(item.action == 'dodajWezwanie'){
     if(item.open == 1) {
         var style = 'style="background-color:#f44335;"';
