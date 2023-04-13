@@ -166,6 +166,7 @@ window.addEventListener("message", (event) => {
       $("#showpanel").show();
       document.getElementById("showpanel").style.display = "flex";
       SetDispatch();
+      $("#wezwania2").html('');
     }
     else {
       $("#showpanel").hide();
@@ -180,7 +181,7 @@ window.addEventListener("message", (event) => {
     else{
         var style = '';
     }
-    $("#wezwania").append('<tr id="wezwanie-'+item.id+'" '+style+'><td>'+item.wezwanie_wzywajacy+'</td><td>'+item.wezwanie_wiadomosc+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akcja</button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#" onclick="oznaczGPS(\''+item.x+'\', \''+item.y+'\', \''+item.z+'\');">Oznacz na GPS</a><a class="dropdown-item" href="#" onclick="ZakonczWezwanie(\''+item.id+'\');">Zakończ wezwanie</a></div></div></td></tr>');
+    $("#wezwania2").append('<tr id="wezwanie-'+item.id+'" '+style+'><td>'+item.wezwanie_wzywajacy+'</td><td>'+item.wezwanie_wiadomosc+'</td><td><div class="dropdown"><button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akcja</button><div class="dropdown-menu" aria-labelledby="dropdownMenuButton"><a class="dropdown-item" href="#" onclick="oznaczGPS(\''+item.x+'\', \''+item.y+'\', \''+item.z+'\');">Oznacz na GPS</a><a class="dropdown-item" href="#" onclick="ZakonczWezwanie(\''+item.id+'\');">Zakończ wezwanie</a></div></div></td></tr>');
 }
 });
 

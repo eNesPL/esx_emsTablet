@@ -89,3 +89,4 @@ RegisterNUICallback("oznaczGPS", function(data)
     SetNewWaypoint(tonumber(x), tonumber(y))
     ESX.ShowNotification(y)
  end)
+ 
